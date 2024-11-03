@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="https://www.clarifruit.com/wp-content/uploads/2020/09/fav-150x150.png"
+      sizes="32x32" />
+    <meta
+      property="og:image"
+      content="https://www.clarifruit.com/wp-content/uploads/2020/09/Clarifruit-social.jpg" />
+    <title>Clarifruit</title>
+
+    <!-- font -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=poppins@400,500,700&display=swap"
+      rel="stylesheet" />
+    <!-- styles -->
+
+    <style>
+      :root {
+        --white: #ffffff;
+        --black1: #000000;
+        --black2: #2e2e2e;
+        --gray: #7e7e7e;
+        --green: #40bb1b;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        color: var(--black1);
+        background-color: var(--white);
+        line-height: 1.6;
+        font-weight: 500;
+        text-wrap: pretty;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        overscroll-behavior: none;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        font-weight: ingerit;
+        font-size: inherit;
+        color: inherit;
+      }
+      figure {
+        line-height: 1;
+      }
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 5rem;
+        border-radius: 99999px;
+        background-color: var(--green);
+        color: var(--white);
+        font-size: 2.6rem;
+        font-weight: 500;
+        letter-spacing: -1px;
+        text-transform: capitalize;
+        cursor: pointer;
+        border: none;
+        min-height: 0;
+        min-width: 0;
+        line-height: 1.15;
+        transition: background-color 0.35s ease-in-out;
+        margin: 0;
+      }
+      .button:hover {
+        background-color: var(--black2);
+      }
+      .relative {
+        position: relative;
+      }
+      select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+      }
+      select::-ms-expand {
+        display: none;
+      }
+      .hide-d {
+        display: none;
+      }
+      .hide-m {
+        display: block;
+      }
+
+      .style-wrapper {
+        width: 100%;
+        min-height: 100dvh;
+        overflow: clip;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 7rem 5rem;
+
+        & main {
+          margin: 0 auto;
+          width: 100%;
+          max-width: 144rem;
+          position: relative;
+          z-index: 20;
+
+          & .section1 {
+            border-radius: 3rem;
+            border: 1px solid var(--green);
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0px 15px 35px 0px rgba(64, 187, 27, 0.15);
+            backdrop-filter: blur(16px);
+            width: 100%;
+            padding: 5%;
+
+            & form {
+              margin: 0 auto;
+              width: 100%;
+              max-width: 104rem;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+
+              & .row {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(16rem, 1fr));
+                column-gap: 2.2rem;
+
+                &.row-table {
+                  margin-top: 4.2rem;
+                  position: relative;
+
+                  & .table-hrs {
+                    position: absolute;
+                    top: calc(2.6rem + 14.4rem);
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 20;
+                    pointer-events: none;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 7.8rem;
+
+                    & .table-hr {
+                      border: none;
+                      height: 1px;
+                      background-color: var(--black1);
+                      width: 100%;
+                      opacity: 0.4;
+                    }
+                  }
+                }
+                & .col {
+                  display: flex;
+                  flex-direction: column;
+                  padding-top: 2.6rem;
+                  padding-bottom: 2rem;
+
+                  &.col-left {
+                    & h2 {
+                      font-size: 2.2rem;
+                      font-weight: 500;
+                      color: var(--green);
+                    }
+                    & h3 {
+                      font-size: 2rem;
+                      font-weight: 500;
+                      color: var(--black2);
+                    }
+                  }
+
+                  &.col-bg {
+                    & h2 {
+                      font-size: 2.2rem;
+                      font-weight: 700;
+                    }
+                    & h3 {
+                      font-size: 3rem;
+                      font-weight: 700;
+                    }
+                  }
+
+                  & .col-item {
+                    min-height: 8rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 2.4rem;
+
+                    & .cel-hr {
+                      width: 3.8rem;
+                      height: 1px;
+                      max-width: 100%;
+                      background-color: var(--black1);
+                      margin: 0 auto;
+                    }
+
+                    &.is-first {
+                      min-height: 14.4rem;
+
+                      & > div {
+                        display: flex;
+                        gap: 1.2rem;
+                        letter-spacing: -0.88px;
+                        line-height: 1.2;
+
+                        & figure {
+                          width: 5rem;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                        }
+                      }
+                    }
+
+                    &.is-last {
+                      min-height: 15.4rem;
+                      width: calc(100% - 2.8rem);
+                      padding-top: 1.4rem;
+
+                      & .input-wrapper {
+                        background-color: #40bb1b10;
+                        border-radius: 1.6rem;
+                        padding-top: 1.2rem;
+                        padding-bottom: 1.6rem;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 1rem;
+
+                        & label {
+                          font-size: 1.8rem;
+                          font-weight: 500;
+                          color: var(--black2);
+                          line-height: 1.2;
+                          letter-spacing: -0.7px;
+                        }
+                        & select {
+                          min-width: 8rem;
+                          height: 3.8rem;
+                          border-radius: 0.6rem;
+                          border: 1px solid var(--green);
+                          background-color: var(--white);
+                          padding: 0 1.6rem;
+                          font-size: 2.4rem;
+                          font-weight: 500;
+                        }
+                        & img {
+                          position: absolute;
+                          right: 1rem;
+                          top: 50%;
+                          transform: translateY(-50%);
+                          pointer-events: none;
+                        }
+                        /* harel */
+                      }
+                    }
+                  }
+
+                  &.col-bg {
+                    border-radius: 2rem;
+                    background: var(--white);
+                    box-shadow: 0px 1px 15px 0px rgba(64, 187, 27, 0.15);
+                    text-align: center;
+                    align-items: center;
+                  }
+                }
+
+                /* footnotes */
+                &.row-footnotes {
+                  margin-top: 2.6rem;
+                  margin-bottom: 3.2rem;
+
+                  & p {
+                    grid-column: 2 / span 2;
+                    font-size: 1.3rem;
+                    color: var(--gray);
+                    line-height: 1.4;
+                  }
+                }
+                /* button */
+                &.row-button {
+                  & .button-wrapper {
+                    grid-column: 2 / span 2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  }
+                }
+                /* title */
+                &.row-title {
+                  & h1 {
+                    grid-column: 2 / span 2;
+                    font-size: 2.6rem;
+                    font-weight: 700;
+                    text-align: center;
+                    letter-spacing: -1px;
+                    line-height: 1.15;
+                    & span {
+                      font-size: 2rem;
+                      font-weight: 500;
+                      line-height: 1.5;
+                      letter-spacing: -0.8px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        & .bg-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          min-width: 100%;
+          max-width: 140svw;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          z-index: 10;
+          transform: translateX(-50%);
+          pointer-events: none;
+        }
+        & .bg-image.image-mobile {
+          display: none;
+          height: auto;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hide-d {
+          display: block;
+        }
+        .hide-m {
+          display: none;
+        }
+
+        .style-wrapper {
+          padding: 7rem 2rem;
+
+          & main {
+            & .section1 {
+              border-radius: 0;
+              border: none;
+              background-color: transparent;
+              box-shadow: none;
+              backdrop-filter: none;
+              width: 100%;
+              padding: 0;
+
+              & form {
+                & .row {
+                  display: flex;
+                  flex-direction: column;
+                  column-gap: 2.2rem;
+                  width: 100%;
+                  max-width: 32rem;
+                  margin: 0 auto;
+                  gap: 2.4rem;
+
+                  &.row-table {
+                    margin-top: 7.2rem;
+                    position: relative;
+
+                    & .table-hrs {
+                      display: none;
+                    }
+                  }
+                  & .col {
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 1.4rem;
+
+                    &.col-left {
+                      display: none;
+                    }
+
+                    &.col-bg {
+                      & h2 {
+                        text-align: left;
+                        font-size: 2.4rem;
+                      }
+                      & h3 {
+                        font-size: 3.2rem;
+                      }
+                    }
+
+                    & .col-item {
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      gap: 2.4rem;
+                      width: 100%;
+                      max-width: 80%;
+                      margin: 0 auto;
+                      text-align: left;
+
+                      & > figure {
+                        display: none;
+                      }
+
+                      & > h3 {
+                        color: var(--black2);
+                        font-size: 2rem;
+                        font-weight: 500;
+                        line-height: 1.2;
+                        letter-spacing: -0.8px;
+                      }
+
+                      &.is-center {
+                        border-top: 1px solid #00000010;
+                        border-bottom: 1px solid #00000010;
+                      }
+
+                      &.is-first {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        & > h3 {
+                          font-weight: 700;
+                          font-size: 3.2rem;
+                        }
+                      }
+
+                      &.is-last {
+                        min-height: 15.4rem;
+                        max-width: 90%;
+                        padding-top: 1.4rem;
+
+                        & .input-wrapper {
+                          padding-top: 2.6rem;
+
+                          & label {
+                            font-size: 2rem;
+                            text-align: center;
+                          }
+                          & select {
+                            min-width: 11.4rem;
+                            height: 4.4rem;
+                            padding: 0 3.6rem;
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  /* footnotes */
+                  &.row-footnotes {
+                    margin-top: 4.2rem;
+                    margin-bottom: 2rem;
+                    max-width: 28rem;
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    & p {
+                      font-size: 1rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          /* button */
+          .button {
+            padding: 0.8rem 3.6rem;
+            font-size: 2rem;
+            letter-spacing: -0.75px;
+          }
+          & .bg-image.image-mobile {
+            display: block;
+          }
+          & .bg-image.image-mobile.is-2 {
+            max-width: 100%;
+            transform: translateX(0);
+            left: -30%;
+            top: 30%;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="style-wrapper">
+      <main>
+        <section class="section1">
+          <form action="https://www.panker.dev" name="licenses_form">
+            <!-- page title -->
+            <div class="row row-title">
+              <h1>Licenses<br /><span>Per Month / User</span></h1>
+            </div>
+            <!-- main table -->
+            <div class="row row-table">
+              <!-- left column -->
+              <div class="col col-left">
+                <div class="col-item is-first">
+                  <h2>Features</h2>
+                </div>
+                <div class="col-item">
+                  <h3>Mobile app</h3>
+                </div>
+                <div class="col-item">
+                  <h3>Inspections reports & analytics</h3>
+                </div>
+                <div class="col-item">
+                  <h3>Computer vision technology</h3>
+                </div>
+              </div>
+
+              <!-- center column -->
+              <div class="col col-bg col-center">
+                <div class="col-item is-first">
+                  <div>
+                    <figure>
+                      <img
+                        alt=""
+                        width="51"
+                        height="44"
+                        loading="eager"
+                        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770d7a30210d0281f5d3_icon1.svg" />
+                    </figure>
+                    <h2>Inspector<br />Pro*</h2>
+                  </div>
+                  <h3>$199</h3>
+                </div>
+                <div class="col-item">
+                  <h3 class="hide-d">Mobile app</h3>
+                  <figure>
+                    <img
+                      alt=""
+                      width="30"
+                      height="30"
+                      loading="eager"
+                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
+                  </figure>
+                </div>
+                <div class="col-item is-center">
+                  <h3 class="hide-d">Inspections reports & analytics</h3>
+                  <figure>
+                    <img
+                      alt=""
+                      width="30"
+                      height="30"
+                      loading="eager"
+                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
+                  </figure>
+                </div>
+                <div class="col-item">
+                  <h3 class="hide-d">Computer vision technology</h3>
+                  <figure>
+                    <img
+                      alt=""
+                      width="30"
+                      height="30"
+                      loading="eager"
+                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
+                  </figure>
+                </div>
+                <div class="col-item is-last">
+                  <div class="input-wrapper">
+                    <label for="pro_users">
+                      How many Pro<br />users do you need?
+                    </label>
+                    <div class="relative">
+                      <select required id="pro_users" name="pro_users">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                      <img
+                        width="12"
+                        height="6"
+                        alt=""
+                        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/672527666f82233feda547ca_Vector.svg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- right column -->
+              <div class="col col-bg col-right">
+                <div class="col-item is-first">
+                  <div>
+                    <figure>
+                      <img
+                        alt=""
+                        width="28"
+                        height="44"
+                        loading="eager"
+                        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b070155fc18610226_icon2.svg" />
+                    </figure>
+                    <h2>Inspector<br />Standard</h2>
+                  </div>
+                  <h3>$99</h3>
+                </div>
+                <div class="col-item">
+                  <h3 class="hide-d">Mobile app</h3>
+                  <figure>
+                    <img
+                      alt=""
+                      width="30"
+                      height="30"
+                      loading="eager"
+                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
+                  </figure>
+                </div>
+                <div class="col-item is-center">
+                  <h3 class="hide-d">Inspections reports & analytics</h3>
+                  <figure>
+                    <img
+                      alt=""
+                      width="30"
+                      height="30"
+                      loading="eager"
+                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
+                  </figure>
+                </div>
+                <div class="col-item">
+                  <div class="cel-hr"></div>
+                </div>
+                <div class="col-item is-last">
+                  <div class="input-wrapper">
+                    <label for="standard_users">
+                      How many Standard<br />users do you need?
+                    </label>
+                    <div class="relative">
+                      <select
+                        required
+                        id="standard_users"
+                        name="standard_users">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                      <img
+                        width="12"
+                        height="6"
+                        alt=""
+                        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/672527666f82233feda547ca_Vector.svg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- table bg -->
+              <div class="table-hrs">
+                <hr class="table-hr is-1" />
+                <hr class="table-hr is-2" />
+                <hr class="table-hr is-3" />
+                <hr class="table-hr is-4" />
+              </div>
+            </div>
+            <!-- footnotes -->
+            <div class="row row-footnotes">
+              <p>
+                *Momentarily available on select produce categories<br />*Requires
+                an iPhone 12 Pro device (or any version above 12) or iPad Pro
+                device.
+              </p>
+            </div>
+            <!-- submit button -->
+            <div class="row row-button">
+              <div class="button-wrapper">
+                <button class="button" type="submit">Start Free Trial</button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <!-- background-images -->
+      <img
+        class="bg-image image-desktop"
+        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b1fca92c8923da516_desktop.avif"
+        alt=""
+        width="1920"
+        height="1195"
+        loading="eager" />
+      <img
+        class="bg-image image-mobile"
+        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b742817b029bdb11b_mobile.avif"
+        alt=""
+        width="412"
+        height="452"
+        loading="eager" />
+      <img
+        class="bg-image image-mobile is-2"
+        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6727b463bd68ce8674314550_mobile2.avif"
+        alt=""
+        width="347"
+        height="630"
+        loading="eager" />
+    </div>
+  </body>
+</html>
