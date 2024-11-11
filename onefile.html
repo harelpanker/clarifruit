@@ -202,6 +202,21 @@
                     flex-direction: column;
                     justify-content: center;
                     gap: 2.4rem;
+                    position: relative;
+
+                    & .footnotes {
+                      position: absolute;
+                      bottom: -110%;
+                      left: 0;
+                      top: auto;
+                      width: 100%;
+                      height: 100%;
+                      z-index: 10;
+                      pointer-events: none;
+                      display: flex;
+                      flex-direction: column;
+                      gap: 1.2rem;
+                    }
 
                     & .cel-hr {
                       width: 3.8rem;
@@ -298,6 +313,8 @@
                 }
                 /* button */
                 &.row-button {
+                  margin-top: 3.6rem;
+
                   & .button-wrapper {
                     grid-column: 2 / span 2;
                     display: flex;
@@ -411,6 +428,8 @@
                       gap: 2.4rem;
                       width: 100%;
                       max-width: 80%;
+                      padding-top: 0.8rem;
+                      padding-bottom: 0.8rem;
                       margin: 0 auto;
                       text-align: left;
 
@@ -418,7 +437,7 @@
                         display: none;
                       }
 
-                      & > h3 {
+                      & h3 {
                         color: var(--black2);
                         font-size: 2rem;
                         font-weight: 500;
@@ -500,6 +519,50 @@
         }
       }
     </style>
+    <style>
+      /* input */
+      input[type='checkbox'] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        /* Remove most all native input styles */
+        appearance: none;
+        /* For iOS < 15 */
+        background-color: transparent;
+        /* Not removed via appearance */
+        margin: 0;
+        margin-top: 0.8rem;
+
+        font: inherit;
+        color: var(--green);
+        width: 30px;
+        height: 30px;
+        border: 0.15em solid var(--green);
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: grid;
+        place-content: center;
+      }
+      input[type='checkbox']::before {
+        content: '';
+        width: 0.8em;
+        height: 0.8em;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--green);
+        background-color: var(--green);
+      }
+
+      input[type='checkbox']:checked::before {
+        transform: scale(1);
+      }
+    </style>
   </head>
   <body>
     <div class="style-wrapper">
@@ -523,90 +586,17 @@
                 <div class="col-item">
                   <h3>Inspections reports & analytics</h3>
                 </div>
-                <div class="col-item">
+                <div class="col-item relative">
                   <h3>Computer vision technology</h3>
+                  <p class="footnotes">
+                    *Momentarily available on select produce categories<br />*Requires
+                    an iPhone 12 Pro device (or any version above 12) or iPad
+                    Pro device.
+                  </p>
                 </div>
               </div>
 
               <!-- center column -->
-              <div class="col col-bg col-center">
-                <div class="col-item is-first">
-                  <div>
-                    <figure>
-                      <img
-                        alt=""
-                        width="51"
-                        height="44"
-                        loading="eager"
-                        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770d7a30210d0281f5d3_icon1.svg" />
-                    </figure>
-                    <h2>Inspector<br />Pro*</h2>
-                  </div>
-                  <h3>$199</h3>
-                </div>
-                <div class="col-item">
-                  <h3 class="hide-d">Mobile app</h3>
-                  <figure>
-                    <img
-                      alt=""
-                      width="30"
-                      height="30"
-                      loading="eager"
-                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
-                  </figure>
-                </div>
-                <div class="col-item is-center">
-                  <h3 class="hide-d">Inspections reports & analytics</h3>
-                  <figure>
-                    <img
-                      alt=""
-                      width="30"
-                      height="30"
-                      loading="eager"
-                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
-                  </figure>
-                </div>
-                <div class="col-item">
-                  <h3 class="hide-d">Computer vision technology</h3>
-                  <figure>
-                    <img
-                      alt=""
-                      width="30"
-                      height="30"
-                      loading="eager"
-                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
-                  </figure>
-                </div>
-                <div class="col-item is-last">
-                  <div class="input-wrapper">
-                    <label for="pro_users">
-                      How many Pro<br />users do you need?
-                    </label>
-                    <div class="relative">
-                      <select required id="pro_users" name="pro_users">
-                        <option value="0" selected>0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                      </select>
-                      <img
-                        width="12"
-                        height="6"
-                        alt=""
-                        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/672527666f82233feda547ca_Vector.svg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- right column -->
               <div class="col col-bg col-right">
                 <div class="col-item is-first">
                   <div>
@@ -679,6 +669,97 @@
                 </div>
               </div>
 
+              <!-- right column -->
+              <div class="col col-bg col-center">
+                <div class="col-item is-first">
+                  <div>
+                    <figure>
+                      <img
+                        alt=""
+                        width="51"
+                        height="44"
+                        loading="eager"
+                        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770d7a30210d0281f5d3_icon1.svg" />
+                    </figure>
+                    <h2>Inspector<br />Pro*</h2>
+                  </div>
+                  <h3>$199</h3>
+                </div>
+                <div class="col-item">
+                  <h3 class="hide-d">Mobile app</h3>
+                  <figure>
+                    <img
+                      alt=""
+                      width="30"
+                      height="30"
+                      loading="eager"
+                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
+                  </figure>
+                </div>
+                <div class="col-item is-center">
+                  <h3 class="hide-d">Inspections reports & analytics</h3>
+                  <figure>
+                    <img
+                      alt=""
+                      width="30"
+                      height="30"
+                      loading="eager"
+                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
+                  </figure>
+                </div>
+                <div class="col-item">
+                  <div class="hide-d">
+                    <h3>Computer vision technology</h3>
+                    <p class="footnotes-mobile">
+                      *Momentarily available on select produce categories<br />*Requires
+                      an iPhone 12 Pro device (or any version above 12) or iPad
+                      Pro device.
+                    </p>
+                  </div>
+                  <figure>
+                    <img
+                      alt=""
+                      width="30"
+                      height="30"
+                      loading="eager"
+                      src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/6724770b62a5f35d6b155def_check.svg" />
+                  </figure>
+                </div>
+                <div class="col-item is-last">
+                  <div class="input-wrapper">
+                    <label for="pro_users">
+                      How many Pro<br />users do you need?
+                      <input
+                        type="checkbox"
+                        id="pro_users"
+                        name="pro_users"
+                        value="true" />
+                    </label>
+
+                    <!-- <div class="relative">
+                      <select required id="pro_users" name="pro_users">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                      <img
+                        width="12"
+                        height="6"
+                        alt=""
+                        src="https://cdn.prod.website-files.com/666c7f094ef448a50760aaec/672527666f82233feda547ca_Vector.svg" />
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+
               <!-- table bg -->
               <div class="table-hrs">
                 <hr class="table-hr is-1" />
@@ -688,13 +769,13 @@
               </div>
             </div>
             <!-- footnotes -->
-            <div class="row row-footnotes">
+            <!-- <div class="row row-footnotes">
               <p>
                 *Momentarily available on select produce categories<br />*Requires
                 an iPhone 12 Pro device (or any version above 12) or iPad Pro
                 device.
               </p>
-            </div>
+            </div> -->
             <!-- submit button -->
             <div class="row row-button">
               <div class="button-wrapper">
